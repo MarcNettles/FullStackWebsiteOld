@@ -52,9 +52,11 @@ app.get('/', (req,res) => {
 
 });
 
-
+// A simple about me page.
 app.get('/about', (req,res) => {
 
+    // res.render takes in two arguments, res.render(string, tuple), where the string is the thing we wish to render and tuple is like a json,
+    // where the thing on the left ('title') is referenced in the HTML using EJS like so: <%= title %>.
     res.render('pages/about', {
         title: "About Us"
     });
@@ -62,21 +64,32 @@ app.get('/about', (req,res) => {
 });
 
 
+// Personal Projects directory. Will lead to other pages.
 app.get('/projects', (req,res)=> {
     res.render('pages/projects', {
         title: "Personal Projects"
     });
 });
 
+// Login/Signup page, will be tied to a database to show off DB integration.
 app.get('/signup', (req,res)=> {
     res.render('pages/signup', {
         title: "Signup/Login"
     });
 });
 
+// Flickr to show off API requests and AJAX
 app.get('/flickr', (req,res)=>{
     res.render('pages/flickr', {
         title:"Flickr Api Access Example"
+    });
+
+});
+
+// Tic-Tac-Toe to show off some simple javascripting
+app.get('tictactoe', (req,res)=>{
+    res.render('pages/tictactoe', {
+        title: "Simple Tic-Tac-Toe Demo"
     });
 
 });
