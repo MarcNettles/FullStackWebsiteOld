@@ -14,6 +14,7 @@
 	<link rel="stylesheet" href="/stylesheets/custom_bootstrap_navbar.css">
 -->
 
+<!-- Here we see the navigation bar that shows up at the top of each page-->
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
 	<div class="container-fluid">
 		<ul class="navbar-nav mr-auto">
@@ -26,8 +27,19 @@
 			<li class="nav-item">
 				<a class="nav-link" href="/about">About Me</a>
 			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="/projects">My Projects</a>
+			<!-- Dropdown Menu Example-->
+			<li class="nav-item dropdown">
+				<!-- Make this item the dropdown toggle-->
+				<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">My Projects</a>
+
+				<!-- Now to make and unsorted list of dropdown items to fill the dropdown menu-->
+				<ul class="dropdown-menu dropdown-menu-dark">
+					<!-- Each <li> here is an item on the dropdown menu list-->
+					<li><a class="dropdown-item" href="/flickr">Flickr Gallery Search</a></li>
+					<li><a class="dropdown-item" href="/tictactoe">Tic-Tac-Toe</a></li>
+
+				</ul>
+
 			</li>
 		</ul>
 		<ul class="navbar-nav navbar-right">

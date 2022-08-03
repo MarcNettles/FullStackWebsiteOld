@@ -138,20 +138,19 @@ function reset_play()
 
 function play() 
 {
-	
-	
-	if(started == false)
+    
+    if(started == false)
 	{
-		alert("The game has not started.");
+        alert("The game has not started.");
 	}
 	else
 	{
 		
-		if(document.getElementById("move_text_id").value.match(/^(A1|A2|A3|B1|B2|B3|C1|C2|C3)$/g))
+		if(document.getElementById("move_text_id").value.match(/^(A1|A2|A3|B1|B2|B3|C1|C2|C3|a1|a2|a3|b1|b2|b3|c1|c2|c3)$/g))
 		{
 			
 			/*  Check to make sure players can't override each others' moves*/
-			if(document.getElementById(document.getElementById("move_text_id").value).innerHTML == "X" || document.getElementById(document.getElementById("move_text_id").value).innerHTML == "O")
+			if(document.getElementById(document.getElementById("move_text_id").value.toUpperCase()).innerHTML == "X" || document.getElementById(document.getElementById("move_text_id").value.toUpperCase()).innerHTML == "O")
 			{
 				alert("Invalid Move, Please Select an Empty Square.");
 				return;
@@ -163,7 +162,7 @@ function play()
 			{
 				
 				
-				switch(document.getElementById("move_text_id").value)
+				switch(document.getElementById("move_text_id").value.toUpperCase())
 				{
 					case "A1":
 						document.getElementById("A1").innerHTML = "X";
@@ -226,7 +225,7 @@ function play()
 			{	
 				
 				
-				switch(document.getElementById("move_text_id").value)
+				switch(document.getElementById("move_text_id").value.toUpperCase())
 				{
 					case "A1":
 						document.getElementById("A1").innerHTML = "O";
@@ -395,6 +394,8 @@ function play()
 		{
 			alert("Invalid Move. Please select either A1, A2, A3, B1, B2, B3, C1, C2, or C3.");
 		}
+        document.getElementById('move_text_id').value ='';
+        document.getElementById("move_text_id").focus();
 	}
 	
 	

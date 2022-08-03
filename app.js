@@ -87,7 +87,7 @@ app.get('/flickr', (req,res)=>{
 });
 
 // Tic-Tac-Toe to show off some simple javascripting
-app.get('tictactoe', (req,res)=>{
+app.get('/tictactoe', (req,res)=>{
     res.render('pages/tictactoe', {
         title: "Simple Tic-Tac-Toe Demo"
     });
