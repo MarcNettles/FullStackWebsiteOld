@@ -1,0 +1,82 @@
+<!--// Marc Nettles 06/27/2022
+//
+// The intent of this project is to set up my own private
+// web server which will host my public website containing
+// my coding and webdev projects.
+//
+//
+// Things I want to use: Back-end/Front-end separation, Bootstrap, NodeJS, ExpressJS, EJS, maybe try some reactJS
+-->
+
+<!-- flickr.ejs is where I showcase making API calls to flickr -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Including the head and header reusable partials -->
+<head>
+	<%- include('../partials/head') -%>
+    
+    <script type="text/javascript" src="/javascripts/flickr.js"></script>
+</head>
+
+<body>
+
+    <header class="sticky-top">
+        <%- include('../partials/header') -%>
+    </header>
+
+    <main class="container">
+        <div class="container">
+	
+            <div class="row">
+                    
+                    
+                    <!-- Had to remove form to get it to actually make the api call -->
+                    <!--<form>-->
+                        <div class="col">
+                            Select how many pictures per page:
+                            <select class="form-control" id="numberImages">
+                                <option>30</option>
+                                <option>50</option>
+                                <option>70</option>
+                            
+                        </div>
+                        
+                        <div class="col">
+                        
+                            <div class ="form-row">
+                                <label for="filterTags">Filter results by:</label>
+                                <input type="text" class="form-control" id="filterTags" placeholder="Filter by tags: e.g. 'Trucks'">
+                            </div>
+                        
+                        </div>
+                        
+                        <div class="col">
+                            
+                            <button type="submit" class="btn btn-primary" onClick="clearPhotos(); makeApiCall();" >Submit</button>
+                            
+                        </div>
+                    
+                    <!--</form>-->
+                
+                
+                
+            </div>
+        
+        </div>
+        <div class="container">
+            <div class="row" id="photoPlaceholder">
+            
+            
+            </div>
+        </div>
+    </main>
+
+    <br>
+    <footer class = "text-center bg-dark">
+        <%- include('../partials/footer') -%>
+    </footer>
+
+</body>
+</html>

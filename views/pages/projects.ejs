@@ -1,0 +1,45 @@
+<!--// Marc Nettles 06/27/2022
+//
+// The intent of this project is to set up my own private
+// web server which will host my public website containing
+// my coding and webdev projects.
+//
+//
+// Things I want to use: Back-end/Front-end separation, Bootstrap, NodeJS, ExpressJS, EJS, maybe try some reactJS
+-->
+
+<!-- projects.ejs is where I will organize and list all of my personal projects. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Including the head and header reusable partials -->
+<head>
+	<%- include('../partials/head') -%>
+</head>
+
+<body>
+
+    <header class="sticky-top">
+        <%- include('../partials/header') -%>
+    </header>
+
+    <main class="container">
+        <section class="py-5 text-center container">
+
+            <div class="row py-lg-5">
+                <div class="col-lg-6 col-md-8 mx-auto">
+                    Personal Projects
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <br>
+    <footer class = "text-center bg-dark">
+        <%- include('../partials/footer') -%>
+    </footer>
+
+</body>
+</html>
