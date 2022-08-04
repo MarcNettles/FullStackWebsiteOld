@@ -103,7 +103,7 @@ function openModal() {
 function enableButton(letter, capital, number, length, match) {
 
     var button = document.getElementById('my_submit_button');
-    var condition = ((letter.classList.item(0) == "valid") && (capital.classList.item(0) == "valid") && (number.classList.item(0) == "valid") && (length.classList.item(0) == "valid") && (match.classList.item(0) == "valid") ); // TODO: Replace false with the correct condition
+    var condition = ((letter.classList.item(0) == "valid") && (capital.classList.item(0) == "valid") && (number.classList.item(0) == "valid") && (length.classList.item(0) == "valid") && (match.classList.item(0) == "valid") );
     if(condition) {       
             button.disabled = false;
         }        
