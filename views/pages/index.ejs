@@ -12,120 +12,124 @@
 
 <!-- Including the head and header reusable partials -->
 <head>
-	<%- include('../partials/head') -%>
+	<%- include('../partials/head') -%> <!--This is how you include a reusable partial-->
 </head>
 
 <body>
-	<div class="container-grid">
-
-		<%- include('../partials/banner') -%>
+	<div class="container-fluid g-0"> <!-- Using container-fluid gives 100% width wrapper container; g-0 removes the "gutters" (aka margins)-->
 		
-		<header class="sticky-top">
-			<%- include('../partials/header') -%>
-		</header>
+		<!-- I want to put this in a div that has height: 250px; but for some reason when I wrap JUST this in a div, it then puts the navbar above the images.-->
+		<%- include('../partials/banner') -%>
 
-		<main role="main" id="main">
-			<h2>The Carousel</h2>
-                <div class="container">
+		
+		<div class="sticky-top"> <!-- sticky-top we define as position:sticky;top:0px;-->
+			<%- include('../partials/navbar') -%>
+		</div>
 
-                    <div id="index_main_Carousel" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#index_main_Carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide #1"></button>
-                            <button type="button" data-bs-target="#index_main_Carousel" data-bs-slide-to="1" aria-label="Slide #2"></button>
-                            <button type="button" data-bs-target="#index_main_Carousel" data-bs-slide-to="2" aria-label="Slide #3"></button>
-                        </div>
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img src="https://cdn.pixabay.com/photo/2020/01/15/11/08/tree-4767679_960_720.jpg" class="d-block w-100" alt="Serene Picture" style="width:1920px;height:900px" >
-                            </div>
-                            <div class="carousel-item">
-                                <img src="https://cdn.pixabay.com/photo/2018/04/28/22/03/dawn-3358468_960_720.jpg" class="d-block w-100" alt="Calm Picture" style="width:1920px;height:900px">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="https://cdn.pixabay.com/photo/2020/06/26/15/09/poppy-5343017_960_720.jpg" class="d-block w-100" alt="Flowers Picture" style="width:1920px;height:900px">
-                            </div>
-                            <button class="carousel-control-prev" type="button" data-bs-target="#index_main_Carousel" data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#index_main_Carousel" data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Next</span>
-                            </button>
-                        </div>
-                    </div>
-                    <p style="text-align:right">All Photos provided by Pixabay.com under their free photos section.</p> 
-                </div>
-
+		<div class="container-fluid">
+			<main role="main" id="main"> <!--id="main" left if you want to use the CSS display: grid; instead of Bootstrap--> <!--role="main" is for accessibility. Read up on ARIA roles.-->
 				<h2>The Carousel</h2>
-                <div class="container">
+					<div class="container">
 
-                    <div id="index_main_Carousel" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#index_main_Carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide #1"></button>
-                            <button type="button" data-bs-target="#index_main_Carousel" data-bs-slide-to="1" aria-label="Slide #2"></button>
-                            <button type="button" data-bs-target="#index_main_Carousel" data-bs-slide-to="2" aria-label="Slide #3"></button>
-                        </div>
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img src="https://cdn.pixabay.com/photo/2020/01/15/11/08/tree-4767679_960_720.jpg" class="d-block w-100" alt="Serene Picture" style="width:1920px;height:900px" >
-                            </div>
-                            <div class="carousel-item">
-                                <img src="https://cdn.pixabay.com/photo/2018/04/28/22/03/dawn-3358468_960_720.jpg" class="d-block w-100" alt="Calm Picture" style="width:1920px;height:900px">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="https://cdn.pixabay.com/photo/2020/06/26/15/09/poppy-5343017_960_720.jpg" class="d-block w-100" alt="Flowers Picture" style="width:1920px;height:900px">
-                            </div>
-                            <button class="carousel-control-prev" type="button" data-bs-target="#index_main_Carousel" data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#index_main_Carousel" data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Next</span>
-                            </button>
-                        </div>
-                    </div>
-                    <p style="text-align:right">All Photos provided by Pixabay.com under their free photos section.</p> 
-                </div>
+						<div id="index_main_Carousel" class="carousel slide" data-bs-ride="carousel">
+							<div class="carousel-indicators">
+								<button type="button" data-bs-target="#index_main_Carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide #1"></button>
+								<button type="button" data-bs-target="#index_main_Carousel" data-bs-slide-to="1" aria-label="Slide #2"></button>
+								<button type="button" data-bs-target="#index_main_Carousel" data-bs-slide-to="2" aria-label="Slide #3"></button>
+							</div>
+							<div class="carousel-inner">
+								<div class="carousel-item active">
+									<img src="https://cdn.pixabay.com/photo/2020/01/15/11/08/tree-4767679_960_720.jpg" class="d-block w-100" alt="Serene Picture" style="width:1920px;height:900px" >
+								</div>
+								<div class="carousel-item">
+									<img src="https://cdn.pixabay.com/photo/2018/04/28/22/03/dawn-3358468_960_720.jpg" class="d-block w-100" alt="Calm Picture" style="width:1920px;height:900px">
+								</div>
+								<div class="carousel-item">
+									<img src="https://cdn.pixabay.com/photo/2020/06/26/15/09/poppy-5343017_960_720.jpg" class="d-block w-100" alt="Flowers Picture" style="width:1920px;height:900px">
+								</div>
+								<button class="carousel-control-prev" type="button" data-bs-target="#index_main_Carousel" data-bs-slide="prev">
+									<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+									<span class="visually-hidden">Previous</span>
+								</button>
+								<button class="carousel-control-next" type="button" data-bs-target="#index_main_Carousel" data-bs-slide="next">
+									<span class="carousel-control-next-icon" aria-hidden="true"></span>
+									<span class="visually-hidden">Next</span>
+								</button>
+							</div>
+						</div>
+						<p style="text-align:right">All Photos provided by Pixabay.com under their free photos section.</p> 
+					</div>
 
-				<h2>The Carousel</h2>
-                <div class="container">
+					<h2>The Carousel</h2>
+					<div class="container">
 
-                    <div id="index_main_Carousel" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#index_main_Carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide #1"></button>
-                            <button type="button" data-bs-target="#index_main_Carousel" data-bs-slide-to="1" aria-label="Slide #2"></button>
-                            <button type="button" data-bs-target="#index_main_Carousel" data-bs-slide-to="2" aria-label="Slide #3"></button>
-                        </div>
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img src="https://cdn.pixabay.com/photo/2020/01/15/11/08/tree-4767679_960_720.jpg" class="d-block w-100" alt="Serene Picture" style="width:1920px;height:900px" >
-                            </div>
-                            <div class="carousel-item">
-                                <img src="https://cdn.pixabay.com/photo/2018/04/28/22/03/dawn-3358468_960_720.jpg" class="d-block w-100" alt="Calm Picture" style="width:1920px;height:900px">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="https://cdn.pixabay.com/photo/2020/06/26/15/09/poppy-5343017_960_720.jpg" class="d-block w-100" alt="Flowers Picture" style="width:1920px;height:900px">
-                            </div>
-                            <button class="carousel-control-prev" type="button" data-bs-target="#index_main_Carousel" data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#index_main_Carousel" data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Next</span>
-                            </button>
-                        </div>
-                    </div>
-                    <p style="text-align:right">All Photos provided by Pixabay.com under their free photos section.</p> 
-                </div>
+						<div id="index_main_Carousel" class="carousel slide" data-bs-ride="carousel">
+							<div class="carousel-indicators">
+								<button type="button" data-bs-target="#index_main_Carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide #1"></button>
+								<button type="button" data-bs-target="#index_main_Carousel" data-bs-slide-to="1" aria-label="Slide #2"></button>
+								<button type="button" data-bs-target="#index_main_Carousel" data-bs-slide-to="2" aria-label="Slide #3"></button>
+							</div>
+							<div class="carousel-inner">
+								<div class="carousel-item active">
+									<img src="https://cdn.pixabay.com/photo/2020/01/15/11/08/tree-4767679_960_720.jpg" class="d-block w-100" alt="Serene Picture" style="width:1920px;height:900px" >
+								</div>
+								<div class="carousel-item">
+									<img src="https://cdn.pixabay.com/photo/2018/04/28/22/03/dawn-3358468_960_720.jpg" class="d-block w-100" alt="Calm Picture" style="width:1920px;height:900px">
+								</div>
+								<div class="carousel-item">
+									<img src="https://cdn.pixabay.com/photo/2020/06/26/15/09/poppy-5343017_960_720.jpg" class="d-block w-100" alt="Flowers Picture" style="width:1920px;height:900px">
+								</div>
+								<button class="carousel-control-prev" type="button" data-bs-target="#index_main_Carousel" data-bs-slide="prev">
+									<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+									<span class="visually-hidden">Previous</span>
+								</button>
+								<button class="carousel-control-next" type="button" data-bs-target="#index_main_Carousel" data-bs-slide="next">
+									<span class="carousel-control-next-icon" aria-hidden="true"></span>
+									<span class="visually-hidden">Next</span>
+								</button>
+							</div>
+						</div>
+						<p style="text-align:right">All Photos provided by Pixabay.com under their free photos section.</p> 
+					</div>
 
-			
-			
-		</main>
+					<h2>The Carousel</h2>
+					<div class="container">
+
+						<div id="index_main_Carousel" class="carousel slide" data-bs-ride="carousel">
+							<div class="carousel-indicators">
+								<button type="button" data-bs-target="#index_main_Carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide #1"></button>
+								<button type="button" data-bs-target="#index_main_Carousel" data-bs-slide-to="1" aria-label="Slide #2"></button>
+								<button type="button" data-bs-target="#index_main_Carousel" data-bs-slide-to="2" aria-label="Slide #3"></button>
+							</div>
+							<div class="carousel-inner">
+								<div class="carousel-item active">
+									<img src="https://cdn.pixabay.com/photo/2020/01/15/11/08/tree-4767679_960_720.jpg" class="d-block w-100" alt="Serene Picture" style="width:1920px;height:900px" >
+								</div>
+								<div class="carousel-item">
+									<img src="https://cdn.pixabay.com/photo/2018/04/28/22/03/dawn-3358468_960_720.jpg" class="d-block w-100" alt="Calm Picture" style="width:1920px;height:900px">
+								</div>
+								<div class="carousel-item">
+									<img src="https://cdn.pixabay.com/photo/2020/06/26/15/09/poppy-5343017_960_720.jpg" class="d-block w-100" alt="Flowers Picture" style="width:1920px;height:900px">
+								</div>
+								<button class="carousel-control-prev" type="button" data-bs-target="#index_main_Carousel" data-bs-slide="prev">
+									<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+									<span class="visually-hidden">Previous</span>
+								</button>
+								<button class="carousel-control-next" type="button" data-bs-target="#index_main_Carousel" data-bs-slide="next">
+									<span class="carousel-control-next-icon" aria-hidden="true"></span>
+									<span class="visually-hidden">Next</span>
+								</button>
+							</div>
+						</div>
+						<p style="text-align:right">All Photos provided by Pixabay.com under their free photos section.</p> 
+					</div>
+
+				
+				
+			</main>
+		</div>
 		<br>
-		<footer class = "text-center bg-dark">
+		<footer role="contentinfo" class="text-center bg-dark">
 			<%- include('../partials/footer') -%>
 		</footer>
 	</div>
