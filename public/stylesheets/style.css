@@ -6,3 +6,25 @@ body {
 a {
   color: #00B7FF;
 }
+
+.sticky-top{
+  position: sticky;
+  top: 0px;
+}
+
+.container{
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-areas:
+  "header header header"
+  "aside_L main aside_R"
+  "aside_L main aside_R"
+  "aside_L main aside_R"
+  "footer footer footer";
+  max-width: 1200px;
+  margin: auto;
+  height: 100vh;
+  width: 100vw;
+  grid-column-gap: 10px;
+  grid-row-gap: 20px;
+}
