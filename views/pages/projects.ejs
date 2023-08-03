@@ -16,6 +16,12 @@
 <!-- Including the head and header reusable partials -->
 <head>
 	<%- include('../partials/head') -%>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Nunito+Sans:opsz@6..12&family=Poppins:wght@300&family=Roboto&display=swap');
+    </style> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata&family=Inter:wght@300&family=Nunito+Sans:opsz@6..12&family=Poppins:wght@300&family=Roboto&display=swap" rel="stylesheet"> 
 </head>
 
 <body>
@@ -26,16 +32,22 @@
         <%- include('../partials/navbar') -%>
     </header>
 
-    <main class="container">
+    <main>
         <section class="py-5 text-center container">
 
             <div class="row py-lg-5">
-                <div class="col-lg-6 col-md-8 mx-auto">
-                    Personal Projects
+                
+                <div class="row">
+                    <div class="col-lg-6 col-md-8 mx-auto">
+                        <p class="display-2"> <u>My Projects</u> </p>
+                        <p> Note: I'm changing up the font with each entry to showcase the use of different fonts. They may not all look great, but the point is to show I know how to import fonts.</p>
+                    </div>
                 </div>
-
-
-                <h2>The Carousel</h2>
+                <div class="row">
+                    <p class="display-6">The Carousel</p>
+                    <p>This is a Bootstrap carousel filled with some stock photos. Very common on the home page of any website.</p>
+                </div>
+                
                 <div class="container">
 
                     <div id="index_main_Carousel" class="carousel slide" data-bs-ride="carousel">
@@ -68,11 +80,33 @@
                 </div>
             </div>
 
+            <!-- Robotics Final Video-->
+            <div class="row">
+                <p class="display-6">Robotics Final</p>
+                <p style="font-family: 'Nunito Sans', sans-serif;">I mainly worked on the RRT (Rapidly Exploring Random Tree) algorithm which took in a completed mapping, completed using LiDAR, and then finds the optimal route. 
+                    I also implemented a smoothing technique, which allowed the robot's movement to be much smoother.</p>
+                <video controls>
+                    <source src="resources/Robotics Final Project.mp4" />
+                </video>
+            </div>
+            <br><br>
+            <!-- Senior Capstone Project for Digiclips Video-->
+            <div class="row">
+                <p class="display-6">Senior Capstone - Search Engine Video Editor for DigiClips</p>
+                <p style="font-family: 'Inconsolata', monospace;">I was team lead for this project and as such I not only coded a good portion of the project, but I also oversaw front-end and back-end team progress, ensured there was 
+                    effective communication, made sure organizational tools such as Notion were utilized, communicated with the sponsors, and hosted team building events.  </p>
+                <video controls>
+                    <source src="resources/Back-up Video Demo of Project.mp4" />
+                </video>
+            </div>
+            
         </section>
+
+        
     </main>
 
     <br>
-    <footer class = "text-center bg-dark">
+    <footer role="contentinfo" class= "text-center bg-dark sticky-bottom">
         <%- include('../partials/footer') -%>
     </footer>
 

@@ -55,7 +55,7 @@ function makeApiCall(a = "1")
 	
 	
 	// Retrieve all the required API arguments from the HTML page created. For example, number of images to load from the dropdown.
-	numberImages = document.getElementById("numberImages").options[document.getElementById("numberImages").selectedIndex].text;
+	numberImages = 30//document.getElementById("numberImages").options[document.getElementById("numberImages").selectedIndex].text;
 	inputTag = document.getElementById("filterTags").value;
 	
 	
@@ -108,3 +108,12 @@ window.onscroll = function(ev) {
     }
 };
 
+
+/* 
+ * Detects when the enter key is pressed (and the user is on the search bar) and submits the request.
+*/
+window.onkeyup = function(ev){
+	if(ev.key=="Enter" && document.activeElement.id == "filterTags"){
+		document.getElementById("flickr_submit").click();
+	}
+}

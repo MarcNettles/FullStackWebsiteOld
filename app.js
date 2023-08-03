@@ -67,7 +67,7 @@ app.get('/about', (req,res) => {
 // Personal Projects directory. Will lead to other pages.
 app.get('/projects', (req,res)=> {
     res.render('pages/projects', {
-        title: "Personal Projects | Marc Nettles"
+        title: "My Projects | Marc Nettles"
     });
 });
 
