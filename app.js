@@ -123,10 +123,16 @@ app.put('/', (req,res) => {
 //===================================================================================<
 
 
+/* NOTE 08/07/2023: Removing app.listen from here because ./bin/www (should be a path inside the FULLSTACKWEBSITE main folder) already calls it and it may be causing issues.
+
 // Listen for activity on the specified port 
 //-- (while this code is running with "node app.js", 
 //-- it will continue to listen on this port and route 
 //-- the requests according to the code above)
-app.listen(port, ()=> {
+
+
+
+/*app.listen(port, ()=> {
     console.log(`Connected to port ${port}`)
 })
+*/
